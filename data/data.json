@@ -1,0 +1,44 @@
+[
+	{
+		"id": 1,
+		"path": "./images/photos",
+		"image": "1",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Nikita"
+	},
+	{
+		"id": 2,
+		"path": "./images/photos",
+		"image": "2",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Nikita"
+	},
+	{
+		"id": 3,
+		"path": "./images/photos",
+		"image": "3",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Aleks"
+	},
+	{
+		"id": 4,
+		"path": "./images/photos",
+		"image": "4",
+		"extensions": ["jpeg"],
+		"alt": "Julia"
+	},
+	{
+		"id": 5,
+		"path": "./images/photos",
+		"image": "5",
+		"extensions": ["jpeg"],
+		"alt": "Aleks and Nikita"
+	},
+	{
+		"id": 6,
+		"path": "./images/photos",
+		"image": "6",
+		"extensions": ["jpeg"],
+		"alt": "Aleks and Nikita"
+	}
+]

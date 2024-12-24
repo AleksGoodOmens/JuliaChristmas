@@ -1,0 +1,45 @@
+.greeting {
+	background-image: url('../images/slider/bg-slider.jpeg');
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	padding: rem(100) 0;
+
+	&__content {
+		position: relative;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	&__slider {
+		margin: 0 auto;
+		max-width: 40vw;
+
+		.slider {
+			height: 30vw;
+			&__slide {
+				overflow: hidden;
+
+				border-radius: rem(20);
+
+				img {
+					display: block;
+					object-fit: cover;
+					object-position: center;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+	&__snowman {
+		position: absolute;
+		bottom: rem(-100);
+		left: 0;
+		width: 100%;
+		max-width: rem(590);
+	}
+	&__title {
+		font: 400 clamp(rem(36), 1.6226rem + 2.6415vw, rem(64)) / 1.25 var(--font-vibes), sans-serif;
+		color: var(--color-main);
+	}
+}

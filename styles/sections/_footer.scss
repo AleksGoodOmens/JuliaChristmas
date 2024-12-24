@@ -1,0 +1,44 @@
+.footer {
+	&__container {
+		background-image: url('../images/bg-cta.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: rem(270) 0;
+		background-color: var(--color-main);
+	}
+
+	&__title {
+		text-align: center;
+		font: 400 clamp(rem(36), 0.9057rem + 5.6604vw, rem(96)) / 1 var(--font-vibes);
+		color: var(--color-secondary);
+		margin-bottom: rem(60);
+	}
+	&__icons {
+		display: grid;
+		place-content: center;
+		grid-template-columns: repeat(4, auto);
+		a {
+			svg {
+				width: rem(80);
+				height: rem(80);
+				fill: var(--color-secondary);
+				transition: all 0.3s ease;
+			}
+			&:active,
+			&:focus {
+				svg {
+					fill: var(--color-accent);
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					svg {
+						fill: var(--color-accent);
+					}
+				}
+			}
+		}
+	}
+}

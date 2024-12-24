@@ -1,0 +1,31 @@
+$breakpoints: (
+	'mobile-sm': rem(320),
+	'mobile-md': rem(380),
+	'tablet': rem(768),
+	'tablet-lg': rem(1024),
+	'tablet-xl': rem(1060),
+	'desktop-sm': rem(1276),
+	'desktop': rem(1440),
+);
+
+@mixin respond-to($size) {
+	$breakpoint: map-get($breakpoints, $size);
+	@if $breakpoint {
+		@media (width > $breakpoint) {
+			@content;
+		}
+	} @else {
+		@warn "breakpoint #{$size} не найден в $breakpoints!";
+	}
+}
+
+@mixin respond-to-min($size) {
+	$breakpoint: map-get($breakpoints, $size);
+	@if $breakpoint {
+		@media (width >= #{$breakpoint}) {
+			@content;
+		}
+	} @else {
+		@warn "breakpoint #{$size} не найден в $breakpoints!";
+	}
+}

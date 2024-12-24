@@ -1,0 +1,18 @@
+@import 'utils/variables';
+@import 'utils//functions';
+
+@import 'base/reset';
+@import 'base/fonts';
+
+body {
+	background-image: url('../images/bg.jpg');
+}
+
+@import 'components/containers';
+@import 'components/countdown';
+
+@import 'sections/promo';
+@import 'sections/slider';
+@import 'sections/map';
+
+@import 'sections/footer';

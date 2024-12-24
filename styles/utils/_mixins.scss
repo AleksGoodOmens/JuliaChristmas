@@ -1,0 +1,84 @@
+@mixin action-large {
+	font-family: var(--font-family);
+	font-size: rem(24);
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 150%;
+	letter-spacing: 0.16em;
+}
+
+@mixin action-medium {
+	font-family: var(--font-family);
+	font-size: rem(16);
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 140%;
+	letter-spacing: 0.12em;
+}
+
+@mixin action-small {
+	font-family: var(--font-family);
+	font-size: rem(12);
+	font-weight: 600;
+	text-transform: uppercase;
+	line-height: 130%;
+	letter-spacing: 0.05em;
+}
+
+@mixin caption {
+	font-family: var(--second-family);
+	font-size: rem(24);
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: 0.05em;
+}
+
+@mixin bubbles-bg() {
+	background-image: url('../images/bg-bubbles.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin bgImages($images...) {
+	background-image: #{$images};
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin header1() {
+	font-weight: 600;
+	font-size: rem(32);
+	line-height: 150%;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+@mixin header2 {
+	font-weight: 600;
+	font-size: rem(24);
+	line-height: 152%;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+@mixin header3 {
+	font-weight: 600;
+	font-size: rem(16);
+	line-height: 152%;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+@mixin header4 {
+	font-weight: 600;
+	font-size: rem(12);
+	line-height: 130%;
+	letter-spacing: 0.05em;
+}
+
+@mixin sliderText {
+	font-family: var(--font-family);
+	font-size: rem(80);
+	line-height: 100%;
+	font-weight: 600;
+	text-transform: uppercase;
+}
