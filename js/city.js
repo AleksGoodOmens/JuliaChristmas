@@ -96,10 +96,10 @@ export function createCityOnTheScale() {
 		point.style.backgroundColor = city.color;
 		point.textContent = city.name;
 		if (i % 2 === 0) {
-			point.style.bottom = '10px';
+			point.style.top = '-24px';
 			point.classList.add('scale__point-even');
 		} else {
-			point.style.top = '10px';
+			point.style.bottom = '-24px';
 			point.classList.add('scale__point-odd');
 		}
 
