@@ -6,6 +6,9 @@
 
 body {
 	background-image: url('../images/bg.jpg');
+	main {
+		overflow: hidden;
+	}
 }
 
 @import 'components/containers';

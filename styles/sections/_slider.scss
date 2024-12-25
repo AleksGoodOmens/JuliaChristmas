@@ -3,7 +3,10 @@
 	background-position: center;
 	background-size: cover;
 	position: relative;
-	padding: rem(100) 0;
+	padding: rem(50) 0;
+	@media screen and (min-width: 768px) {
+		padding: rem(100) 0;
+	}
 
 	&__content {
 		position: relative;
@@ -12,13 +15,16 @@
 	}
 	&__slider {
 		margin: 0 auto;
-		max-width: 40vw;
+		margin-top: rem(50);
 
 		.slider {
-			height: 30vw;
+			height: 100vw;
+			@media screen and (min-width: 768px) {
+				height: 40vw;
+				width: 80%;
+			}
 			&__slide {
 				overflow: hidden;
-
 				border-radius: rem(20);
 
 				img {

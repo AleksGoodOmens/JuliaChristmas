@@ -4,8 +4,11 @@
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
-		padding: rem(270) 0;
 		background-color: var(--color-main);
+		padding: rem(100) 0;
+		@media screen and (min-width: 768px) {
+			padding: rem(270) 0;
+		}
 	}
 
 	&__title {

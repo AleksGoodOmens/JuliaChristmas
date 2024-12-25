@@ -145,7 +145,6 @@ export function morozMovements(dateString) {
 		}
 		let elapsedSeconds = (totalSeconds - startSeconds) % animationDuration;
 
-		console.log(1 - elapsedSeconds / animationDuration, (1 - elapsedSeconds / animationDuration) * containerWith);
 		const progress = elapsedSeconds / animationDuration;
 
 		const position = (1 - progress) * containerWith;
