@@ -314,10 +314,12 @@ body main {
 .map {
   padding: 3.125rem 0;
 }
+.map .content {
+  margin: 0 auto;
+}
 .map__content {
   background-image: url("../images/map.jpg");
-  margin: 0 auto;
-  background-position: center;
+  background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   padding-bottom: 50%;
@@ -327,7 +329,7 @@ body main {
 
 .city {
   position: absolute;
-  transform: translate(-50%, -30%);
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -353,88 +355,86 @@ body main {
 .scale {
   position: absolute;
   width: 100%;
-  bottom: 1.875rem;
+  bottom: -50px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (width >= 768px) {
   .scale {
-    bottom: 6.25rem;
+    bottom: 0;
   }
+}
+.scale__cities {
+  padding: 0.625rem 0;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  justify-content: center;
 }
 .scale__bar {
   background-color: var(--color-main);
-  height: 10px;
   width: 100%;
   position: relative;
   transition: all 1s ease;
 }
-@media screen and (min-width: 768px) {
+@media screen and (width > 48rem) {
   .scale__bar {
-    height: 50px;
+    padding-bottom: 1.25rem;
   }
 }
 .scale__point {
-  position: absolute;
-  transform: translateX(-50%);
   border-radius: 1.25rem;
-  padding: 0.3125rem 0.625rem;
   color: var(--color-main);
-  transition: all 1s ease;
+  transition: all 2s ease;
   font-size: 0.75rem;
+  padding: 0.3125rem;
+}
+@media screen and (width > 32.5rem) {
+  .scale__point {
+    font-size: 1.25rem;
+    padding: 0.3125rem 0.625rem;
+  }
 }
 .scale__point-active {
   z-index: 1;
   background-image: url("../images/salute.gif");
   background-position: center;
   background-size: contain;
+  color: var(--color-secondary);
   animation: sway 2s ease infinite;
-}
-.scale__point-even::after {
-  content: "";
-  display: block;
-  width: 6px;
-  border-radius: 50%;
-  height: 10px;
-  background-color: inherit;
-  position: relative;
-  margin: 0 auto -10px auto;
-}
-.scale__point-odd::before {
-  content: "";
-  display: block;
-  width: 6px;
-  border-radius: 50%;
-  height: 10px;
-  background-color: inherit;
-  position: relative;
-  margin: -10px auto 0 auto;
 }
 
 #dedmoroz {
   position: absolute;
   left: 100%;
-  bottom: 0;
-  width: 50px;
+  top: -100%;
+  width: 100px;
   z-index: 2;
   transform: scaleX(-1) translateX(50%);
+}
+@media screen and (width > 48rem) {
+  #dedmoroz {
+    width: 150px;
+    top: -200%;
+  }
 }
 
 @keyframes bounceMarker {
   0%, 100% {
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -150%);
   }
 }
 @keyframes sway {
   0%, 100% {
-    transform: rotate(0deg) translateX(-50%);
+    transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-15deg) translateX(-50%);
+    transform: rotate(-15deg);
   }
   75% {
-    transform: rotate(15deg) translateX(-50%);
+    transform: rotate(15deg);
   }
 }
 .footer__container {

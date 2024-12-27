@@ -1,4 +1,4 @@
-import { createCityMarkers, createCityOnTheScale, morozMovements } from './city.js';
+import { actions, createCityMarkers, createCityOnTheScale } from './city.js';
 import { Countdown } from './countdown.js';
 import { fetchData } from './helpers/helpers.js';
 import { hideOnScroll } from './hideOnScroll.js';
@@ -23,11 +23,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 	const photos = await fetchData('./data/data.json');
 
 	if (photos) {
-		const promoSlider = new Slider(`.promo__slider`, photos).init();
+		new Slider(`.promo__slider`, photos).init();
 
 		renderSlides('.swiper-wrapper', 'slider__slide swiper-slide', photos);
 
-		const swiper = new Swiper('.swiper', {
+		new Swiper('.swiper', {
 			effect: 'cube',
 			grabCursor: true,
 			loop: true,
@@ -42,11 +42,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 				disableOnInteraction: false,
 			},
 		});
-
-		createCityOnTheScale();
-		createCityMarkers();
-		morozMovements('2024-12-21');
 	}
+	createCityOnTheScale();
+	createCityMarkers();
+
+	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 28, 0, 0, 0)));
 
 	hideOnScroll('.banner', 300, 500);
 });
