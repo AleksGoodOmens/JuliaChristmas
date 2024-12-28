@@ -9,19 +9,6 @@ const cityPoints = [
 	{ name: 'Нью-Йорк', lat: 40.7128, lon: -74.006 - 20, utcOffset: -5, color: '#4E8FB2' },
 ];
 
-function geoToMap(lat, lon, mapWidth, mapHeight) {
-	// Диапазоны широты и долготы для вашей карты
-	const mapLatMin = -90,
-		mapLatMax = 90; // Широта от -85 до 85
-	const mapLonMin = -180,
-		mapLonMax = 180; // Долгота от -180 до 180
-
-	const x = ((lon - mapLonMin) / (mapLonMax - mapLonMin)) * mapWidth;
-	const y = ((mapLatMax - lat) / (mapLatMax - mapLatMin)) * mapHeight;
-
-	return { x, y };
-}
-
 // Генерация элементов городов на карте
 export function createCityMarkers() {
 	const mapElement = document.querySelector('.map__content');
@@ -32,6 +19,19 @@ export function createCityMarkers() {
 		mapWidth = mapElement.offsetWidth;
 		mapHeight = mapElement.offsetHeight;
 	});
+
+	function geoToMap(lat, lon, mapWidth, mapHeight) {
+		// Диапазоны широты и долготы для вашей карты
+		const mapLatMin = -90,
+			mapLatMax = 90; // Широта от -85 до 85
+		const mapLonMin = -180,
+			mapLonMax = 180; // Долгота от -180 до 180
+
+		const x = ((lon - mapLonMin) / (mapLonMax - mapLonMin)) * mapWidth;
+		const y = ((mapLatMax - lat) / (mapLatMax - mapLatMin)) * mapHeight;
+
+		return { x, y };
+	}
 
 	function renderCity() {
 		cityPoints.forEach((city) => {
@@ -77,40 +77,46 @@ export function createCityMarkers() {
 	}
 	renderCity();
 
-	window.addEventListener('resize', () => {
+	function debounce(func, wait) {
+		let timeout;
+		return function (...args) {
+			const context = this;
+			clearTimeout(timeout);
+			timeout = setTimeout(() => func.apply(context, args), wait);
+		};
+	}
+
+	function updateCityMarkers() {
 		mapWidth = mapElement.offsetWidth;
 		mapHeight = mapElement.offsetHeight;
-		mapElement.querySelectorAll('.city').forEach((city) => {
-			city.remove();
+
+		mapElement.querySelectorAll('.city').forEach((marker) => {
+			const city = cityPoints.find((city) => city.name === marker.getAttribute('data-city-name'));
+
+			if (city) {
+				const { x, y } = geoToMap(city.lat, city.lon, mapWidth, mapHeight);
+				marker.style.left = `${x}px`;
+				marker.style.top = `${y}px`;
+			}
 		});
-		renderCity();
-	});
-}
+	}
 
-export function createCityOnTheScale() {
-	const bar = document.querySelector('.scale__bar');
-	const cityContainer = document.createElement('div');
-	cityContainer.className = 'scale__cities';
+	const debouncedResize = debounce(updateCityMarkers, 100);
 
-	cityPoints.forEach((city) => {
-		const point = document.createElement('div');
-		point.className = 'scale__point';
-		point.style.backgroundColor = city.color;
-		point.textContent = city.name;
-		point.setAttribute('data-city-name', city.name);
-
-		cityContainer.appendChild(point);
-	});
-	bar.appendChild(cityContainer);
+	window.addEventListener('resize', debouncedResize);
 }
 
 export const actions = {
 	obj: undefined,
 	track: undefined,
+	cityPoints: undefined,
 	containerWith: undefined,
 	XDay: undefined,
-	newYearCome: [],
-	interval: undefined,
+	startTime: undefined,
+	endTime: undefined,
+	animationDuration: 24 * 3600,
+	cities: undefined,
+	debouncedHandleResize: null,
 
 	init: function (objSelector, trackSelector, dateUtc) {
 		this.obj = document.querySelector(objSelector);
@@ -118,76 +124,83 @@ export const actions = {
 		this.containerWith = this.track.offsetWidth;
 		this.XDay = dateUtc;
 
-		window.addEventListener('resize', this.handleResize.bind(this));
+		this.startTime = new Date(this.XDay.getTime()).setUTCHours(this.XDay.getUTCHours() - 12);
+		this.endTime = new Date(this.XDay.getTime()).setUTCHours(this.XDay.getUTCHours() + 12);
+		this.cities = cityPoints.map((city) => ({
+			...city,
+			newYearTime: new Date(this.XDay.getTime()).setUTCHours(this.XDay.getUTCHours() - city.utcOffset),
+		}));
 
+		this.initializeDebouncedResize();
+		this.renderCityOnTheScale();
 		this.updatePosition();
 	},
-	handleResize: function () {
-		this.containerWith = this.track.offsetWidth;
+
+	initializeDebouncedResize: function () {
+		if (this.debouncedHandleResize) {
+			window.removeEventListener('resize', this.debouncedHandleResize);
+		}
+
+		this.debouncedHandleResize = this.debounce(() => {
+			this.containerWith = this.track.offsetWidth;
+		}, 100);
+
+		window.addEventListener('resize', this.debouncedHandleResize);
+	},
+
+	debounce: function (func, wait) {
+		let timeout;
+		return (...args) => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => func.apply(this, args), wait);
+		};
 	},
 
 	updatePosition: function () {
-		const now = new Date(Date.now());
-		const startTime = new Date(this.XDay.getTime());
-		startTime.setUTCHours(this.XDay.getUTCHours() - 12);
-		const endTime = new Date(this.XDay.getTime());
-		endTime.setUTCHours(this.XDay.getUTCHours() + 12);
+		const now = new Date();
 
-		if (now < startTime) {
-			this.interval = setInterval(() => this.updatePosition(), 1000);
-			clearInterval(this.interval);
+		if (now < this.startTime) {
+			requestAnimationFrame(() => this.updatePosition());
 			return;
 		}
 
-		if (now > endTime) {
+		if (now > this.endTime) {
 			this.obj.style.left = `0px`;
 			this.obj.style.transform = `scaleX(1) translateX(0)`;
-			clearInterval(this.interval);
-			this.interval = undefined;
 			console.log('С новым годом!');
 			return;
 		}
-		const totalSeconds = Math.floor((now - startTime) / 1000);
-		const animationDuration = 24 * 3600;
-		const progress = totalSeconds / animationDuration;
+
+		const totalSeconds = Math.floor((now - this.startTime) / 1000);
+		const progress = totalSeconds / this.animationDuration;
 		const position = (1 - progress) * this.containerWith;
 
 		this.obj.style.left = `${position}px`;
+		this.newYearInTheCity(now);
 
-		this.interval = setInterval(() => {
-			this.updatePosition();
-			this.newYearInTheCity(now);
-		}, 1000);
+		requestAnimationFrame(() => this.updatePosition());
 	},
 
 	newYearInTheCity: function (now) {
-		this.newYearCome = [];
+		const activeCities = new Set(this.cities.filter((city) => city.newYearTime <= now).map((city) => city.name));
 
-		cityPoints.forEach((point) => {
-			const newYearTime = new Date(this.XDay.getTime());
-			newYearTime.setUTCHours(this.XDay.getUTCHours() - point.utcOffset);
-
-			if (now >= newYearTime) {
-				this.newYearCome.push(point);
+		this.track.querySelectorAll('[data-city-name]').forEach((child) => {
+			if (activeCities.has(child.getAttribute('data-city-name'))) {
+				child.classList.add('scale__point-active');
 			}
 		});
+	},
 
-		const citiesPoints = document.querySelectorAll('.scale__point');
-		citiesPoints.forEach((city) => {
-			const cityName = city.getAttribute('data-city-name');
-			if (this.newYearCome.some((point) => point.name === cityName)) {
-				city.classList.add('scale__point-active');
-			}
-		});
+	renderCityOnTheScale: function () {
+		this.track.innerHTML = '';
+		this.cities.forEach((city) => {
+			const point = document.createElement('div');
+			point.className = 'scale__point';
+			point.style.backgroundColor = city.color;
+			point.textContent = city.name;
+			point.setAttribute('data-city-name', city.name);
 
-		const cityOnMap = document.querySelectorAll('.city');
-		cityOnMap.forEach((city) => {
-			const cityName = city.getAttribute('data-city-name');
-			if (this.newYearCome.some((point) => point.name === cityName)) {
-				city.style.animation = null;
-				city.style.width = '50px';
-				city.style.height = '50px';
-			}
+			this.track.appendChild(point);
 		});
 	},
 };

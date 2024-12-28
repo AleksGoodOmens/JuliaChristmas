@@ -1,4 +1,4 @@
-import { actions, createCityMarkers, createCityOnTheScale } from './city.js';
+import { actions, createCityMarkers } from './city.js';
 import { Countdown } from './countdown.js';
 import { fetchData } from './helpers/helpers.js';
 import { hideOnScroll } from './hideOnScroll.js';
@@ -43,10 +43,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 			},
 		});
 	}
-	createCityOnTheScale();
 	createCityMarkers();
 
-	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 28, 0, 0, 0)));
+	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 29, 0, 0, 0)));
 
 	hideOnScroll('.banner', 300, 500);
 });

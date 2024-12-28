@@ -356,25 +356,25 @@ body main {
   position: absolute;
   width: 100%;
   bottom: -50px;
+  background-image: url("../images/snow.png");
+  background-color: var(--color-main);
+  background-size: contain;
 }
-@media screen and (width >= 768px) {
+@media screen and (width >= 48rem) {
   .scale {
     bottom: 0;
   }
 }
-.scale__cities {
+.scale__bar {
+  width: 100%;
+  position: relative;
+  transition: all 1s ease;
   padding: 0.625rem 0;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   gap: 0.625rem;
   justify-content: center;
-}
-.scale__bar {
-  background-color: var(--color-main);
-  width: 100%;
-  position: relative;
-  transition: all 1s ease;
 }
 @media screen and (width > 48rem) {
   .scale__bar {
