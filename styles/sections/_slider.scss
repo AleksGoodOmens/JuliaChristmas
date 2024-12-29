@@ -5,7 +5,8 @@
 	background-size: cover;
 	position: relative;
 	padding: rem(50) 0;
-	@media screen and (min-width: 768px) {
+	min-height: 100dvh;
+	@media screen and (width >= rem(768)) {
 		padding: rem(100) 0;
 	}
 
