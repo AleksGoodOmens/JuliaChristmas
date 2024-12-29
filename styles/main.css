@@ -114,7 +114,7 @@ body main {
 }
 .promo__content {
   position: relative;
-  height: 100lvh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
