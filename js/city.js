@@ -196,7 +196,8 @@ export const actions = {
 				if (cityElementOnMap) {
 					cityElementOnMap.style.animation = null;
 					const fireworks = document.createElement('IMG');
-					fireworks.setAttribute('src', '../images/salute.gif');
+					fireworks.setAttribute('src', '../images/salute.png');
+					fireworks.setAttribute('alt', 'salute');
 					fireworks.className = 'fireworks';
 
 					cityElementOnMap.appendChild(fireworks);
