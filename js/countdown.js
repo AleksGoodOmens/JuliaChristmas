@@ -10,6 +10,7 @@ export class Countdown {
 
 	init() {
 		this.timerInterval = setInterval(() => this.updateTimer(), 1000);
+		this.container.style.opacity = 1;
 	}
 
 	updateTimer() {

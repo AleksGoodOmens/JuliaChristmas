@@ -1,4 +1,6 @@
 .countdown {
+	opacity: 0;
+	transition: opacity 5s ease-in-out;
 	display: grid;
 	max-width: fit-content;
 	grid-template-columns: repeat(4, 1fr);

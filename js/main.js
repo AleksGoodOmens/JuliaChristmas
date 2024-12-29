@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 	}
 	createCityMarkers();
 
-	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 29, 0, 0, 0)));
+	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 30, 0, 0, 0)));
 
 	hideOnScroll('.banner', 300, 500);
 });

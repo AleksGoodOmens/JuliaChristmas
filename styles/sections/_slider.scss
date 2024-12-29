@@ -1,6 +1,7 @@
 .greeting {
 	background-image: url('../images/slider/bg-slider.jpeg');
 	background-position: center;
+	overflow: hidden;
 	background-size: cover;
 	position: relative;
 	padding: rem(50) 0;

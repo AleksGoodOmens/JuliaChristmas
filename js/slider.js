@@ -12,23 +12,32 @@ export class Slider {
 	}
 
 	changePhoto() {
-		let counter = 1;
 		const currentPhotos = this.slider.querySelectorAll(`.${this.slideClassName}`);
+		let counter = this.randomNumber(0, currentPhotos.length);
 
 		setInterval(() => {
 			if (currentPhotos) {
 				currentPhotos.forEach((photo) => photo.classList.remove(`${this.slideClassName}-active`));
 				if (counter >= currentPhotos.length) counter = 0;
 				currentPhotos[counter].classList.add(`${this.slideClassName}-active`);
-				counter++;
+				counter = this.randomNumber(counter, currentPhotos.length);
 			}
 		}, 10000);
 	}
 
+	randomNumber(cur, max) {
+		const next = Math.floor(Math.random() * max);
+
+		return cur === next ? this.randomNumber(cur, max) : next;
+	}
+
 	renderImages() {
+		const initIndex = this.randomNumber(0, this.photoList.length);
+
 		this.photoList.forEach((pic, i) => {
 			const picture = document.createElement('picture');
-			picture.className = i === 0 ? `${this.slideClassName} ${this.slideClassName}-active` : this.slideClassName;
+			picture.className =
+				i === initIndex ? `${this.slideClassName} ${this.slideClassName}-active` : this.slideClassName;
 			pic.extensions.forEach((ext) => {
 				let source = document.createElement('source');
 				source.srcset = `${pic.path}/${pic.image}.${ext}`;

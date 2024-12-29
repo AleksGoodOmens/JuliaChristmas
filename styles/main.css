@@ -65,6 +65,8 @@ body main {
 }
 
 .countdown {
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
   display: grid;
   max-width: -moz-fit-content;
   max-width: fit-content;
@@ -109,7 +111,10 @@ body main {
 .promo__content {
   position: relative;
   height: 100dvh;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
   gap: 1.875rem;
 }
 .promo__slider {
@@ -149,14 +154,8 @@ body main {
   opacity: 1;
   z-index: 1;
 }
-.promo__countdown {
-  align-self: flex-start;
-  margin-top: 3.125rem;
-}
 .promo__arrow {
   padding: 0.9375rem;
-  align-self: flex-end;
-  justify-self: center;
   margin-bottom: 3.125rem;
 }
 .promo__arrow svg {
@@ -254,6 +253,7 @@ body main {
 .greeting {
   background-image: url("../images/slider/bg-slider.jpeg");
   background-position: center;
+  overflow: hidden;
   background-size: cover;
   position: relative;
   padding: 3.125rem 0;
