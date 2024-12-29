@@ -4,14 +4,13 @@
 	overflow: hidden;
 	background-size: cover;
 	position: relative;
-	padding: rem(50) 0;
-	height: 100dvh;
+	padding: rem(25) 0;
+	min-height: 100lvh;
 	@media screen and (width >= rem(768)) {
-		padding: rem(100) 0;
+		padding: rem(50) 0;
 	}
 
 	&__content {
-		position: relative;
 		margin: 0 auto;
 		overflow: hidden;
 	}
@@ -20,10 +19,9 @@
 		margin-top: rem(50);
 
 		.slider {
-			height: 100vw;
+			height: clamp(300px, 60vw, 600px);
+			width: clamp(300px, 60vw, 600px);
 			@media screen and (width >= rem(768)) {
-				height: clamp(300px, 60vw, 600px);
-				width: clamp(300px, 60vw, 600px);
 			}
 
 			&__slide {
@@ -50,5 +48,9 @@
 	&__title {
 		font: 400 clamp(rem(36), 1.6226rem + 2.6415vw, rem(64)) / 1.25 var(--font-vibes), sans-serif;
 		color: var(--color-main);
+	}
+	&__arrow {
+		display: block;
+		text-align: center;
 	}
 }

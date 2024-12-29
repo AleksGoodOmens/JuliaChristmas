@@ -1,5 +1,5 @@
 .map {
-	padding: rem(100) 0;
+	padding: rem(100) 0 0 0;
 	.content {
 		margin: 0 auto;
 	}
@@ -47,13 +47,11 @@
 .scale {
 	position: absolute;
 	width: 100%;
-	bottom: -50px;
+	bottom: 0;
 	background-image: url('../images/snow.png');
-	background-color: var(--color-main);
-	background-size: contain;
-	@media screen and (width >= rem(768)) {
-		bottom: 0;
-	}
+	background-size: initial;
+	border-radius: rem(20);
+	background-color: var(--color-bg);
 
 	&__bar {
 		width: 100%;
@@ -93,15 +91,15 @@
 
 #dedmoroz {
 	position: absolute;
+	display: block;
 	left: 100%;
-	top: -100%;
+	top: 0;
 	width: 100px;
-	@media screen and (width > rem(768)) {
-		width: 150px;
-		top: -200%;
+	@media screen and (width >= rem(768)) {
+		width: 200px;
 	}
 	z-index: 2;
-	transform: scaleX(-1) translateX(50%);
+	transform: scaleX(-1) translate(50%, -80%);
 }
 
 @keyframes bounceMarker {

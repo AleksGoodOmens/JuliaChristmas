@@ -260,16 +260,15 @@ body main {
   overflow: hidden;
   background-size: cover;
   position: relative;
-  padding: 3.125rem 0;
-  height: 100dvh;
+  padding: 1.5625rem 0;
+  min-height: 100lvh;
 }
 @media screen and (width >= 48rem) {
   .greeting {
-    padding: 6.25rem 0;
+    padding: 3.125rem 0;
   }
 }
 .greeting__content {
-  position: relative;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -278,13 +277,8 @@ body main {
   margin-top: 3.125rem;
 }
 .greeting__slider .slider {
-  height: 100vw;
-}
-@media screen and (width >= 48rem) {
-  .greeting__slider .slider {
-    height: clamp(300px, 60vw, 600px);
-    width: clamp(300px, 60vw, 600px);
-  }
+  height: clamp(300px, 60vw, 600px);
+  width: clamp(300px, 60vw, 600px);
 }
 .greeting__slider .slider__slide {
   overflow: hidden;
@@ -310,9 +304,13 @@ body main {
   font: 400 clamp(2.25rem, 1.6226rem + 2.6415vw, 4rem)/1.25 var(--font-vibes), sans-serif;
   color: var(--color-main);
 }
+.greeting__arrow {
+  display: block;
+  text-align: center;
+}
 
 .map {
-  padding: 6.25rem 0;
+  padding: 6.25rem 0 0 0;
 }
 .map .content {
   margin: 0 auto;
@@ -360,15 +358,11 @@ body main {
 .scale {
   position: absolute;
   width: 100%;
-  bottom: -50px;
+  bottom: 0;
   background-image: url("../images/snow.png");
-  background-color: var(--color-main);
-  background-size: contain;
-}
-@media screen and (width >= 48rem) {
-  .scale {
-    bottom: 0;
-  }
+  background-size: initial;
+  border-radius: 1.25rem;
+  background-color: var(--color-bg);
 }
 .scale__bar {
   width: 100%;
@@ -410,16 +404,16 @@ body main {
 
 #dedmoroz {
   position: absolute;
+  display: block;
   left: 100%;
-  top: -100%;
+  top: 0;
   width: 100px;
   z-index: 2;
-  transform: scaleX(-1) translateX(50%);
+  transform: scaleX(-1) translate(50%, -80%);
 }
-@media screen and (width > 48rem) {
+@media screen and (width >= 48rem) {
   #dedmoroz {
-    width: 150px;
-    top: -200%;
+    width: 200px;
   }
 }
 
