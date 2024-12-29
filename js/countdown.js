@@ -5,16 +5,16 @@ export class Countdown {
 		this.hours = document.querySelector('#hours');
 		this.minutes = document.querySelector('#minutes');
 		this.seconds = document.querySelector('#seconds');
-		this.nextYear = new Date(date);
+		this.nextYear = new Date(date).getTime();
 	}
 
 	init() {
-		this.timerInterval = setInterval(() => this.updateTimer(), 1000);
 		this.container.style.opacity = 1;
+		this.timerInterval = setInterval(() => this.updateTimer(), 1000);
 	}
 
 	updateTimer() {
-		const currentDate = new Date();
+		const currentDate = new Date().getTime();
 		const timeLeft = this.nextYear - currentDate;
 
 		if (timeLeft <= 0) {
