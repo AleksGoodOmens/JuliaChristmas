@@ -1,0 +1,80 @@
+[
+	{
+		"id": 0,
+		"path": "./images/wishes",
+		"image": "0",
+		"extensions": ["jpeg"],
+		"alt": "wish 0"
+	},
+	{
+		"id": 1,
+		"path": "./images/wishes",
+		"image": "1",
+		"extensions": ["jpeg"],
+		"alt": "wish 1"
+	},
+	{
+		"id": 2,
+		"path": "./images/wishes",
+		"image": "2",
+		"extensions": ["jpeg"],
+		"alt": "wish 2"
+	},
+	{
+		"id": 3,
+		"path": "./images/wishes",
+		"image": "3",
+		"extensions": ["jpeg"],
+		"alt": "wish 3"
+	},
+	{
+		"id": 4,
+		"path": "./images/wishes",
+		"image": "4",
+		"extensions": ["jpeg"],
+		"alt": "wish 4"
+	},
+	{
+		"id": 5,
+		"path": "./images/wishes",
+		"image": "5",
+		"extensions": ["jpeg"],
+		"alt": "wish 5"
+	},
+	{
+		"id": 6,
+		"path": "./images/wishes",
+		"image": "6",
+		"extensions": ["jpeg"],
+		"alt": "wish 6"
+	},
+	{
+		"id": 7,
+		"path": "./images/wishes",
+		"image": "7",
+		"extensions": ["jpeg"],
+		"alt": "wish 7"
+	},
+
+	{
+		"id": 8,
+		"path": "./images/wishes",
+		"image": "8",
+		"extensions": ["jpeg"],
+		"alt": "wish 8"
+	},
+	{
+		"id": 9,
+		"path": "./images/wishes",
+		"image": "9",
+		"extensions": ["jpeg"],
+		"alt": "wish 9"
+	},
+	{
+		"id": 10,
+		"path": "./images/wishes",
+		"image": "10",
+		"extensions": ["jpeg"],
+		"alt": "wish 10"
+	}
+]

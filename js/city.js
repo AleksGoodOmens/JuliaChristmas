@@ -9,7 +9,6 @@ const cityPoints = [
 	{ name: 'Нью-Йорк', lat: 40.7128, lon: -74.006 - 20, utcOffset: -5, color: '#4E8FB2' },
 ];
 
-// Генерация элементов городов на карте
 export function createCityMarkers() {
 	const mapElement = document.querySelector('.map__content');
 	let mapWidth = mapElement.offsetWidth;
@@ -182,11 +181,26 @@ export const actions = {
 	},
 
 	newYearInTheCity: function (now) {
-		const activeCities = new Set(this.cities.filter((city) => city.newYearTime <= now).map((city) => city.name));
+		this.cities.forEach((city) => {
+			if (city.active) return;
 
-		this.track.querySelectorAll('[data-city-name]').forEach((child) => {
-			if (activeCities.has(child.getAttribute('data-city-name'))) {
-				child.classList.add('scale__point-active');
+			if (city.newYearTime <= now) {
+				city.active = true;
+
+				const cityElementOnScale = this.track.querySelector(`[data-city-name="${city.name}"]`);
+				if (cityElementOnScale) {
+					cityElementOnScale.classList.add('scale__point-active');
+				}
+
+				const cityElementOnMap = document.querySelector(`.city[data-city-name="${city.name}"]`);
+				if (cityElementOnMap) {
+					cityElementOnMap.style.animation = null;
+					const fireworks = document.createElement('IMG');
+					fireworks.setAttribute('src', '../images/salute.gif');
+					fireworks.className = 'fireworks';
+
+					cityElementOnMap.appendChild(fireworks);
+				}
 			}
 		});
 	},

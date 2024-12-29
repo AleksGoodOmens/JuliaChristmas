@@ -22,6 +22,15 @@
 	flex-direction: column;
 	align-items: center;
 
+	.fireworks {
+		position: absolute;
+		top: -25px;
+		left: -10px;
+		width: 100px;
+		border-radius: 50%;
+		backdrop-filter: blur(rem(1));
+	}
+
 	svg {
 		width: rem(40);
 	}
@@ -32,6 +41,8 @@
 		border-radius: rem(20);
 		padding: rem(5) rem(10);
 		font-size: rem(12);
+		position: relative;
+		z-index: 1;
 		opacity: 0;
 		@media screen and (min-width: 768px) {
 			opacity: 1;

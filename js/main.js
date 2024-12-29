@@ -19,13 +19,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 		isPaused = !isPaused;
 	});
 
-	new Countdown('#days', '#hours', '#minutes', '#seconds', '2025-01-01').init();
+	new Countdown('.countdown', '2025-01-01').init();
+
 	const photos = await fetchData('./data/data.json');
+	const wishes = await fetchData('./data/wishes.json');
 
-	if (photos) {
-		new Slider(`.promo__slider`, photos).init();
-
-		renderSlides('.swiper-wrapper', 'slider__slide swiper-slide', photos);
+	if (photos) new Slider(`.promo__slider`, photos).init();
+	if (wishes) {
+		renderSlides('.swiper-wrapper', 'slider__slide swiper-slide', wishes);
 
 		new Swiper('.swiper', {
 			effect: 'cube',
@@ -38,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 				shadowScale: 0.94,
 			},
 			autoplay: {
-				delay: 2500,
+				delay: 5000,
 				disableOnInteraction: false,
 			},
 		});

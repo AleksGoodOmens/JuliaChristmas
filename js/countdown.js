@@ -1,9 +1,10 @@
 export class Countdown {
-	constructor(daysSelector, hoursSelector, minutesSelector, secondsSelector, date) {
-		this.days = document.querySelector(daysSelector);
-		this.hours = document.querySelector(hoursSelector);
-		this.minutes = document.querySelector(minutesSelector);
-		this.seconds = document.querySelector(secondsSelector);
+	constructor(containerSelector, date) {
+		this.container = document.querySelector(containerSelector);
+		this.days = document.querySelector('#days');
+		this.hours = document.querySelector('#hours');
+		this.minutes = document.querySelector('#minutes');
+		this.seconds = document.querySelector('#seconds');
 		this.nextYear = new Date(date);
 	}
 
@@ -17,6 +18,8 @@ export class Countdown {
 
 		if (timeLeft <= 0) {
 			clearInterval(this.timerInterval);
+			this.final();
+
 			return;
 		}
 
@@ -33,5 +36,13 @@ export class Countdown {
 
 	renderTimer(element, value) {
 		element.textContent = value < 10 ? `0${value}` : value;
+	}
+
+	final() {
+		this.container.innerHTML = '';
+		this.container.style.display = 'block';
+		const title = document.createElement('h1');
+		title.textContent = 'С новым годом!';
+		this.container.appendChild(title);
 	}
 }

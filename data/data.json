@@ -2,42 +2,91 @@
 	{
 		"id": 1,
 		"path": "./images/photos",
-		"image": "1",
+		"image": "DSC_6950",
 		"extensions": ["jpeg"],
-		"alt": "Julia and Nikita"
+		"alt": "Julia Aleks and Nikita"
 	},
 	{
 		"id": 2,
 		"path": "./images/photos",
-		"image": "2",
+		"image": "DSC_6987",
 		"extensions": ["jpeg"],
 		"alt": "Julia and Nikita"
 	},
 	{
 		"id": 3,
 		"path": "./images/photos",
-		"image": "3",
+		"image": "DSC_6989",
 		"extensions": ["jpeg"],
-		"alt": "Julia and Aleks"
+		"alt": "Julia and Nikita"
 	},
 	{
 		"id": 4,
 		"path": "./images/photos",
-		"image": "4",
+		"image": "DSC_7027",
 		"extensions": ["jpeg"],
-		"alt": "Julia"
+		"alt": "Nikita"
 	},
 	{
 		"id": 5,
 		"path": "./images/photos",
-		"image": "5",
+		"image": "DSC_7036",
 		"extensions": ["jpeg"],
-		"alt": "Aleks and Nikita"
+		"alt": "Nikita"
 	},
 	{
 		"id": 6,
 		"path": "./images/photos",
-		"image": "6",
+		"image": "DSC_7046",
+		"extensions": ["jpeg"],
+		"alt": "Julia"
+	},
+	{
+		"id": 7,
+		"path": "./images/photos",
+		"image": "DSC_7051",
+		"extensions": ["jpeg"],
+		"alt": "Julia"
+	},
+	{
+		"id": 8,
+		"path": "./images/photos",
+		"image": "DSC_7052",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Aleks"
+	},
+	{
+		"id": 9,
+		"path": "./images/photos",
+		"image": "DSC_7057",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Aleks"
+	},
+	{
+		"id": 10,
+		"path": "./images/photos",
+		"image": "DSC_7062",
+		"extensions": ["jpeg"],
+		"alt": "Julia and Aleks"
+	},
+	{
+		"id": 11,
+		"path": "./images/photos",
+		"image": "DSC_7101",
+		"extensions": ["jpeg"],
+		"alt": "Julia"
+	},
+	{
+		"id": 12,
+		"path": "./images/photos",
+		"image": "DSC_7111",
+		"extensions": ["jpeg"],
+		"alt": "Aleks and Nikita"
+	},
+	{
+		"id": 13,
+		"path": "./images/photos",
+		"image": "DSC_7122",
 		"extensions": ["jpeg"],
 		"alt": "Aleks and Nikita"
 	}
