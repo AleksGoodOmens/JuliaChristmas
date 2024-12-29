@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 		isPaused = !isPaused;
 	});
 
-	new Countdown('.countdown', '2025-01-01T00:00:00Z').init();
+	new Countdown('.countdown', '2025-01-01T00:00:00').init();
 
 	const photos = await fetchData('./data/data.json');
 	const wishes = await fetchData('./data/wishes.json');
