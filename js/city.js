@@ -64,7 +64,7 @@ export function createCityMarkers() {
 			cityMarker.appendChild(markerIcon);
 			const salute = document.createElement('IMG');
 			salute.className = 'city__salute';
-			salute.setAttribute('src', '../images/salute.png');
+			salute.setAttribute('src', './images/salute.png');
 			salute.setAttribute('alt', 'salute');
 			salute.style.opacity = 0;
 			salute.style.width = 0;
