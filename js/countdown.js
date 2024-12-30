@@ -43,7 +43,28 @@ export class Countdown {
 		this.container.innerHTML = '';
 		this.container.style.display = 'block';
 		const title = document.createElement('h1');
-		title.textContent = 'С новым годом!';
+		title.className = 'final-title';
+		title.textContent = 'С новым годом! Принимайте поздравления!';
 		this.container.appendChild(title);
+
+		document.querySelector('.title-before').style.display = 'none';
+
+		document.querySelector(`[href="#slider"]`).style.visibility = null;
+		document.querySelector(`.greeting`).style.display = null;
+		new Swiper('.swiper', {
+			effect: 'cube',
+			grabCursor: true,
+			loop: true,
+			cubeEffect: {
+				shadow: true,
+				slideShadows: true,
+				shadowOffset: 20,
+				shadowScale: 0.94,
+			},
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+		});
 	}
 }

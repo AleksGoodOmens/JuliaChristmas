@@ -48,6 +48,7 @@
 	&__title {
 		font: 400 clamp(rem(36), 1.6226rem + 2.6415vw, rem(64)) / 1.25 var(--font-vibes), sans-serif;
 		color: var(--color-main);
+		text-align: center;
 	}
 	&__arrow {
 		display: block;

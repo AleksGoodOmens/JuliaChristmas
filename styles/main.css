@@ -109,6 +109,20 @@ body main {
   color: var(--color-accent);
 }
 
+.final-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.title-before {
+  text-align: center;
+  font-family: var(--font-vibes);
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  padding: 3.125rem 1.25rem;
+  font-size: 2.25rem;
+}
+
 .promo {
   background-color: var(--color-main);
 }
@@ -303,6 +317,7 @@ body main {
 .greeting__title {
   font: 400 clamp(2.25rem, 1.6226rem + 2.6415vw, 4rem)/1.25 var(--font-vibes), sans-serif;
   color: var(--color-main);
+  text-align: center;
 }
 .greeting__arrow {
   display: block;

@@ -27,22 +27,6 @@ window.addEventListener('DOMContentLoaded', async () => {
 	const wishes = await fetchData('./data/wishes.json');
 	if (wishes) {
 		renderSlides('.swiper-wrapper', 'slider__slide swiper-slide', wishes);
-
-		new Swiper('.swiper', {
-			effect: 'cube',
-			grabCursor: true,
-			loop: true,
-			cubeEffect: {
-				shadow: true,
-				slideShadows: true,
-				shadowOffset: 20,
-				shadowScale: 0.94,
-			},
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-		});
 	}
 	createCityMarkers();
 
