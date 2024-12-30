@@ -22,9 +22,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 	new Countdown('.countdown', '2025-01-01T00:00:00').init();
 
 	const photos = await fetchData('./data/data.json');
-	const wishes = await fetchData('./data/wishes.json');
-
 	if (photos) new Slider(`.promo__slider`, photos).init();
+
+	const wishes = await fetchData('./data/wishes.json');
 	if (wishes) {
 		renderSlides('.swiper-wrapper', 'slider__slide swiper-slide', wishes);
 
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 	}
 	createCityMarkers();
 
-	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2024, 11, 30, 0, 0, 0)));
+	actions.init('#dedmoroz', '.scale__bar', new Date(Date.UTC(2025, 0, 1, 0, 0, 0)));
 
 	hideOnScroll('.banner', 300, 500);
 });

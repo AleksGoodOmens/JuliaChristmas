@@ -20,11 +20,10 @@ export function createCityMarkers() {
 	});
 
 	function geoToMap(lat, lon, mapWidth, mapHeight) {
-		// Диапазоны широты и долготы для вашей карты
 		const mapLatMin = -90,
-			mapLatMax = 90; // Широта от -85 до 85
+			mapLatMax = 90;
 		const mapLonMin = -180,
-			mapLonMax = 180; // Долгота от -180 до 180
+			mapLonMax = 180;
 
 		const x = ((lon - mapLonMin) / (mapLonMax - mapLonMin)) * mapWidth;
 		const y = ((mapLatMax - lat) / (mapLatMax - mapLatMin)) * mapHeight;
@@ -36,7 +35,6 @@ export function createCityMarkers() {
 		cityPoints.forEach((city) => {
 			const { x, y } = geoToMap(city.lat, city.lon, mapWidth, mapHeight);
 
-			// Создаем метку
 			const cityMarker = document.createElement('div');
 			const markerIcon = document.createElement('div');
 			markerIcon.className = 'city__icon';
@@ -175,7 +173,7 @@ export const actions = {
 
 		if (now > this.endTime) {
 			this.obj.style.left = `0px`;
-			this.obj.style.transform = `scaleX(1) translateX(0)`;
+			this.obj.style.transform = `scaleX(1) translate(50%, -80%)`;
 			console.log('С новым годом!');
 			return;
 		}
