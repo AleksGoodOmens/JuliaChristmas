@@ -488,4 +488,8 @@ body main {
   .footer__icons a:hover svg {
     fill: var(--color-accent);
   }
+}
+.footer__copyrights {
+  text-align: center;
+  color: var(--color-secondary);
 }/*# sourceMappingURL=main.css.map */
