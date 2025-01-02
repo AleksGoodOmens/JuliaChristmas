@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 		isPaused = !isPaused;
 	});
 
-	new Countdown('.countdown', '2025-01-01T00:00:00').init();
+	new Countdown('.countdown', '2026-01-01T00:00:00').init();
 
 	const photos = await fetchData('./data/data.json');
 	if (photos) new Slider(`.promo__slider`, photos).init();
