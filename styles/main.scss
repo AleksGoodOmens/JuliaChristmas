@@ -5,21 +5,23 @@
 @import 'base/fonts';
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background-image: url('../images/bg.jpg');
-	main {
-		overflow: hidden;
-	}
+  background-image: url('../images/bg.jpg');
+  main {
+    overflow: hidden;
+  }
 }
 
 @import 'components/containers';
 @import 'components/countdown';
 
+@import 'sections/header';
 @import 'sections/promo';
 @import 'sections/slider';
 @import 'sections/map';
+@import 'sections/nav';
 
 @import 'sections/footer';

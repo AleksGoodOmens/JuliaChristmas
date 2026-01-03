@@ -1,0 +1,14 @@
+.nav {
+  background-color: hsla(0, 0%, 100%, 0.372);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding-top: 50px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+  }
+}

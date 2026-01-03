@@ -6,6 +6,7 @@
   --color-accent: #8e1a18;
   --color-bg: #e8e4dc;
   --font-montserrat: "Montserrat sans-serif";
+  --font-segoe: "Segoe";
   --font-vibes: "Vibes";
 }
 
@@ -23,27 +24,39 @@ p {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.ttf");
+  src: url("./fonts/Montserrat-Regular.ttf");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.ttf");
+  src: url("./fonts/Montserrat-SemiBold.ttf");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.ttf");
+  src: url("./fonts/Montserrat-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: "Vibes";
-  src: url("../fonts/GreatVibes-Regular.ttf");
+  src: url("./fonts/GreatVibes-Regular.ttf");
   font-weight: 400;
   font-style: normal;
+}
+@font-face {
+  font-family: "Segoe";
+  src: url("./fonts/segoeuithis.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoe";
+  src: url("./fonts/segoeuithibd.ttf");
+  font-weight: 600;
+  font-style: bold;
 }
 * {
   box-sizing: border-box;
@@ -83,11 +96,11 @@ body main {
   font-weight: 600;
   font-size: 2.25rem;
   line-height: 1.52;
-  font-family: var(--font-montserrat);
   text-transform: uppercase;
   color: var(--color-main);
 }
 .countdown__item {
+  font-family: var(--font-segoe);
   display: grid;
   text-align: center;
   position: relative;
@@ -112,6 +125,7 @@ body main {
 .final-title {
   text-align: center;
   font-size: 2rem;
+  font-family: var(--font-segoe);
 }
 
 .title-before {
@@ -121,6 +135,10 @@ body main {
   color: var(--color-secondary);
   padding: 3.125rem 1.25rem;
   font-size: 2.25rem;
+}
+
+.header {
+  display: grid;
 }
 
 .promo {
@@ -451,6 +469,20 @@ body main {
     transform: rotate(15deg);
   }
 }
+.nav {
+  background-color: hsla(0, 0%, 100%, 0.372);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding-top: 50px;
+}
+.nav a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: uppercase;
+}
+
 .footer__container {
   background-image: url("../images/bg-cta.png");
   background-position: center;
