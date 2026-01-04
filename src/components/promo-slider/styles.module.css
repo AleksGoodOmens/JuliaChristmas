@@ -1,0 +1,29 @@
+.slide {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    height: 100%;
+    box-shadow: inset 40px 0 40px -10px var(--color-main), inset -40px 0 40px -10px var(--color-main);
+  }
+}

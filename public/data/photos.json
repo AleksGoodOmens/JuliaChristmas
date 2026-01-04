@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "path": "./photos",
+    "image": "IMG_1393",
+    "extensions": ["JPG"],
+    "alt": "Julia Aleks and Nikita"
+  },
+  {
+    "id": 2,
+    "path": "./photos",
+    "image": "IMG_1394",
+    "extensions": ["JPG"],
+    "alt": "Julia Aleks and Nikita"
+  },
+  {
+    "id": 3,
+    "path": "./photos",
+    "image": "IMG_1395",
+    "extensions": ["JPG"],
+    "alt": "Julia Aleks and Nikita"
+  },
+  {
+    "id": 4,
+    "path": "./photos",
+    "image": "IMG_1396",
+    "extensions": ["JPG"],
+    "alt": "Julia and Nikita"
+  },
+  {
+    "id": 5,
+    "path": "./photos",
+    "image": "IMG_1397",
+    "extensions": ["JPG"],
+    "alt": "Julia and Aleks"
+  },
+  {
+    "id": 6,
+    "path": "./photos",
+    "image": "IMG_1398",
+    "extensions": ["JPG"],
+    "alt": "Julia and Aleks"
+  },
+  {
+    "id": 7,
+    "path": "./photos",
+    "image": "IMG_1399",
+    "extensions": ["JPG"],
+    "alt": "Julia Nikita and Aleks"
+  },
+  {
+    "id": 8,
+    "path": "./photos",
+    "image": "IMG_1400",
+    "extensions": ["JPG"],
+    "alt": "Nikita"
+  },
+  {
+    "id": 9,
+    "path": "./photos",
+    "image": "IMG_1401",
+    "extensions": ["JPG"],
+    "alt": "Nikita and Aleks"
+  },
+  {
+    "id": 10,
+    "path": "./photos",
+    "image": "IMG_1402",
+    "extensions": ["JPG"],
+    "alt": "Julia and Nikita"
+  },
+  {
+    "id": 11,
+    "path": "./photos",
+    "image": "IMG_1403",
+    "extensions": ["JPG"],
+    "alt": "Nikita and Julia"
+  },
+  {
+    "id": 12,
+    "path": "./photos",
+    "image": "IMG_1404",
+    "extensions": ["JPG"],
+    "alt": "Nikita and Aleks"
+  },
+  {
+    "id": 13,
+    "path": "./photos",
+    "image": "IMG_1405",
+    "extensions": ["JPG"],
+    "alt": "Julia"
+  },
+  {
+    "id": 14,
+    "path": "./photos",
+    "image": "IMG_1406",
+    "extensions": ["JPG"],
+    "alt": "Nikita and Julia"
+  },
+  {
+    "id": 15,
+    "path": "./photos",
+    "image": "IMG_1407",
+    "extensions": ["JPG"],
+    "alt": "Nikita"
+  }
+]
