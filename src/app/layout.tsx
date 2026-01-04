@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import { Footer } from '@/components/footer/Footer';
 import { Banner } from '@/components/banner/Banner';
 import { bannerMessages } from '@/components/banner/messages';
+import { Navigation } from '@/components/navigation/Navigation';
 
 const segoe = localFont({
   src: './fonts/segoeuithis.ttf',
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={` ${segoe.variable} ${vibes.variable} ${montserrat.variable}antialiased`}>
         <Banner messages={bannerMessages} />
+        <Navigation />
         {children}
         <Footer />
       </body>
