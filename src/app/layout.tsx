@@ -37,7 +37,7 @@ const montserrat = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Happy New Year! - 2027!',
+  title: 'Happy New Year - 2027!',
   description: 'Designed by Nikita',
 };
 

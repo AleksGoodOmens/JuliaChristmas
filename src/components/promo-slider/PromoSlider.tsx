@@ -9,13 +9,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
-interface IPhoto {
-  id: number;
-  path: string;
-  image: string;
-  extensions: string[];
-  alt: string;
-}
+import { IPhoto } from '../../../types/interfaces';
 
 export const PromoSlider = () => {
   const [photos, setPhotos] = useState<IPhoto[]>([]);

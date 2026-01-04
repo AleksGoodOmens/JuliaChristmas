@@ -8,7 +8,7 @@ export const Promo = () => {
       <PromoSlider />
       <div className=' h-full flex flex-col justify-end items-center gap-2'>
         <Countdown date={new Date(new Date().getFullYear() + 1, 0, 1)} />
-        <Anchor />
+        <Anchor href='#slider' />
       </div>
     </section>
   );

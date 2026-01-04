@@ -1,0 +1,49 @@
+.greeting {
+  background-image: url('/images/slider/bg-slider.jpeg');
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
+  position: relative;
+}
+
+.snowman {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+}
+
+.slider {
+  margin: 0 auto;
+  height: clamp(300px, 60vw, 600px);
+  width: clamp(300px, 60vw, 600px);
+}
+
+.slide {
+  overflow: hidden;
+}
+.content {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.title {
+  font: 400 clamp(2rem, 1.6226rem + 2.6415vw, 5rem) / 1.25 var(--font-vibes), sans-serif;
+  color: var(--color-main);
+  text-align: center;
+}
+
+.final-title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-segoe);
+}
+
+.title-before {
+  text-align: center;
+  font-family: var(--font-vibes);
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  font-size: 2.2rem;
+}

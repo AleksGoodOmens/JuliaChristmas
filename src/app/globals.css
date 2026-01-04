@@ -15,7 +15,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-main: var(--color-main);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-60: var(--color-secondary-60);
+  --color-accent: var(--color-accent);
   --font-sans: var(--font-montserrat);
+  --font-vibes: var(--font-vibes);
+  --font-montserrat: var(--font-montserrat);
+  --font-segoe: var(--font-segoe);
 }
 
 @theme {
@@ -31,16 +38,9 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #103e3f;
-    --foreground: #e8e4dc;
-  }
-}
-
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-main);
   font-family: var(--font-montserrat);
 }
 
