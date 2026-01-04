@@ -3,22 +3,3 @@
   position: relative;
   height: 100svh;
 }
-
-.arrow {
-  padding: 1rem;
-  margin-bottom: 3rem;
-  z-index: 1;
-  position: relative;
-
-  svg {
-    transition: fill 0.3s ease-in-out;
-    fill: var(--color-secondary-60);
-    animation: bounce 2s linear infinite;
-    &:focus,
-    &:active {
-      svg {
-        fill: var(--color-accent);
-      }
-    }
-  }
-}
