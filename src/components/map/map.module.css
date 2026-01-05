@@ -1,0 +1,64 @@
+.map {
+  padding: 100px 0 0 0;
+  .content {
+    margin: 0 auto;
+  }
+}
+.map__content {
+  background-image: url('/images/map.jpg');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 50%;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+.scale {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-image: url('/images/snow.png');
+  background-size: initial;
+  border-radius: 20px;
+  background-color: var(--color-background);
+}
+
+.scale__point {
+  border-radius: 20px;
+  color: var(--color-main);
+  transition: all 2s ease;
+  font-size: 0.8rem;
+  padding: 5px;
+
+  &-active {
+    z-index: 1;
+    background-image: url('/images/salute.png');
+    background-position: center;
+    background-size: contain;
+    color: var(--color-secondary);
+    animation: sway 2s ease infinite;
+  }
+}
+
+.scale__bar {
+  width: 100%;
+  position: relative;
+  transition: all 1s ease;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#dedmoroz {
+  position: absolute;
+  display: block;
+  left: 100%;
+  top: 0;
+  width: 100px;
+  z-index: 2;
+  transform: scaleX(-1) translate(50%, -80%);
+}

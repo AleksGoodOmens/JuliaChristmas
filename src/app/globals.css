@@ -27,6 +27,17 @@
 
 @theme {
   --animate-bgScaler: bgScaler 7s ease-in-out infinite;
+  --animate-bounceMarker: bounceMarker 2s ease-in-out infinite;
+  @keyframes bounceMarker {
+    0%,
+    100% {
+      transform: translate(-50%, -50%);
+    }
+    50% {
+      transform: translate(-50%, -150%);
+    }
+  }
+
   @keyframes bgScaler {
     0%,
     100% {

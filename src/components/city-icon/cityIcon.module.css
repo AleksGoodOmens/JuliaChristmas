@@ -1,0 +1,39 @@
+.city {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  svg {
+    width: 40px;
+  }
+}
+
+.city__name {
+  color: var(--color-secondary);
+  background-color: var(--color-main);
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.city__salute {
+  transition: opacity 2s ease-in;
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}

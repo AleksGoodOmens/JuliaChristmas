@@ -1,4 +1,5 @@
 import { Greeting } from '@/components/greeting/Greeting';
+import { Map } from '@/components/map/Map';
 import { Promo } from '@/components/promo/Promo';
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <section>
       <Promo />
       <Greeting />
+      <Map />
     </section>
   );
 }
