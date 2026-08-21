@@ -1,0 +1,26 @@
+[
+  {
+    "id": "julia-loves-nikita",
+    "alt": "julia",
+    "picSrc": "/photos/DSC_6987.jpeg",
+    "date": "21 Dec 2024",
+    "desc": "Julia Love Nikita!",
+    "title": "Mummy loves her sone!"
+  },
+  {
+    "id": "daddy-loves-nikita",
+    "alt": "julia",
+    "picSrc": "/photos/DSC_6950.jpeg",
+    "date": "21 Dec 2025",
+    "desc": "Aleks Love Nikita!",
+    "title": "Daddy loves his sone!"
+  },
+  {
+    "id": "nikita-loves-parents",
+    "alt": "julia",
+    "picSrc": "/photos/DSC_7111.jpeg",
+    "date": "21 Dec 2026",
+    "desc": "Nikita Love Mammy and Daddy!",
+    "title": "Nikita loves his parents!"
+  }
+]

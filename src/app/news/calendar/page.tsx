@@ -6,8 +6,8 @@ import './calendarCustomStyles.css';
 
 const CalendarPage = () => {
   return (
-    <div className='pt-10 bg-foreground'>
-      <div className='h-50 overflow-hidden relative'>
+    <div className='bg-foreground'>
+      <div className='h-5 overflow-hidden relative'>
         <PromoSlider />
       </div>
       <div className='container mx-auto'>

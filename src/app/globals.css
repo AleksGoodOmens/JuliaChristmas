@@ -10,6 +10,8 @@
   --font-montserrat: 'Montserrat sans-serif';
   --font-segoe: 'Segoe';
   --font-vibes: 'Vibes';
+  --font-digital: 'Digital';
+  --font-digitalMono: 'DigitalMono';
 }
 
 @theme inline {
@@ -23,6 +25,8 @@
   --font-vibes: var(--font-vibes);
   --font-montserrat: var(--font-montserrat);
   --font-segoe: var(--font-segoe);
+  --font-digital: var(--font-digital);
+  --font-digitalMono: var(--font-digitalMono);
 }
 
 @theme {

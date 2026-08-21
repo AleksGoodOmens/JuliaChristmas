@@ -36,6 +36,27 @@ const montserrat = localFont({
   ],
   variable: '--font-Montserrat',
 });
+const digital7 = localFont({
+  src: [
+    {
+      path: './fonts/digital-7.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-digital',
+});
+
+const digital7Mono = localFont({
+  src: [
+    {
+      path: './fonts/digital-7-mono.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-digitalMono',
+});
 
 export const metadata: Metadata = {
   title: 'Happy New Year - 2027!',
@@ -49,10 +70,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={` ${segoe.variable} ${vibes.variable} ${montserrat.variable}antialiased`}>
+      <body
+        className={` ${segoe.variable} ${vibes.variable} ${digital7.variable} ${digital7Mono.variable} ${montserrat.variable}antialiased`}
+      >
         <Banner messages={bannerMessages} />
         <Navigation />
-        {children}
+        <main className='grid'>{children}</main>
         <Footer />
       </body>
     </html>

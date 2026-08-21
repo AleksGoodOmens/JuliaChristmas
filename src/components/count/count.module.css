@@ -1,5 +1,5 @@
 .item {
-  font-family: var(--font-segoe);
+  font-family: var(--font-digitalMono);
   display: grid;
   text-align: center;
   position: relative;
@@ -21,4 +21,6 @@
   font-size: 1rem;
   line-height: 1.3;
   color: var(--color-accent);
+  font-family: var(--font-segoe);
+  font-weight: 800;
 }
