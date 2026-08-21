@@ -14,7 +14,7 @@ import { IPhoto } from '../../../types/interfaces';
 export const PromoSlider = () => {
   const [photos, setPhotos] = useState<IPhoto[]>([]);
   useEffect(() => {
-    fetch('./data/photos.json')
+    fetch('/data/photos.json')
       .then((res) => {
         return res.json();
       })
